@@ -1,25 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minju Seo | Autonomous Driving Engineer</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: auto; padding: 20px; }
-        h1 { color: #333; }
-        .contact { color: #666; }
+        :root { --primary-color: #004c97; --text-color: #333; --bg-light: #f4f7f6; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--text-color); margin: 0; padding: 0; background: var(--bg-light); }
+        .container { max-width: 900px; margin: 50px auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        header { text-align: center; border-bottom: 2px solid var(--bg-light); padding-bottom: 30px; margin-bottom: 30px; }
+        .profile-img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 5px solid var(--bg-light); margin-bottom: 20px; }
+        h1 { margin: 10px 0; color: var(--primary-color); font-size: 2.5em; }
+        .title { font-size: 1.2em; color: #666; font-weight: bold; }
+        .contact-info { margin-top: 15px; font-size: 0.9em; color: #888; }
+        h2 { border-left: 5px solid var(--primary-color); padding-left: 15px; margin-top: 40px; color: var(--primary-color); }
+        .project-card { background: var(--bg-light); padding: 20px; border-radius: 10px; margin-bottom: 15px; }
+        .project-card h3 { margin-top: 0; color: #222; }
+        .links a { display: inline-block; background: var(--primary-color); color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; margin-right: 10px; transition: 0.3s; }
+        .links a:hover { background: #003366; }
     </style>
 </head>
 <body>
-    <h1>Minju Seo</h1>
-    <p class="contact">Email: minju.seo@temple.edu | Philadelphia, PA</p>
-    <hr>
-    <h2>About Me</h2>
-    <p>Electronical Engineering student at Temple University. Specializing in Autonomous Driving and AI systems.</p>
-    <h2>Projects</h2>
-    <ul>
-        <li><strong>Autonomous Vehicle Simulation:</strong> Used PreScan to design driving scenarios.</li>
-        <li><strong>Autonomous Guide Robot:</strong> Developed navigation logic and system architecture.</li>
-    </ul>
-    <h2>Links</h2>
-    <p><a href="https://www.linkedin.com/in/minjuseo/">LinkedIn</a> | <a href="https://github.com/Minju-Seo">GitHub</a></p>
+    <div class="container">
+        <header>
+            <img src="profile.jpg" alt="Minju Seo" class="profile-img" onerror="this.style.display='none'">
+            <h1>Minju Seo</h1>
+            <p class="title">Autonomous Driving & AI Systems Engineer</p>
+            <div class="contact-info">
+                Email: minju.seo@temple.edu | Philadelphia, PA
+            </div>
+        </header>
+
+        <section>
+            <h2>About Me</h2>
+            <p>I am an Electronic Engineering student and an exchange student at <strong>Temple University</strong>. I specialize in system-level design for autonomous driving and AI, with hands-on experience in simulation and robot system architecture.</p>
+        </section>
+
+        <section>
+            <h2>Key Projects</h2>
+            <div class="project-card">
+                <h3>Autonomous Vehicle System Design</h3>
+                <p>Designed and simulated autonomous driving scenarios using <strong>PreScan</strong>. Focused on optimizing control algorithms for safety and response time.</p>
+            </div>
+            <div class="project-card">
+                <h3>AI Guide Robot Development</h3>
+                <p>Developed an AI-powered navigation robot. Programmed core logic to handle real-time sensor data and path planning for a campus competition.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Connect with Me</h2>
+            <div class="links">
+                <a href="https://www.linkedin.com/in/minjuseo/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/Minju-Seo" target="_blank">GitHub</a>
+            </div>
+        </section>
+    </div>
 </body>
 </html>
