@@ -5,175 +5,245 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minju Seo | Autonomous Driving Engineer</title>
     <style>
-       :root {
-    --primary-color: #004c97; /* Temple University Blue */
-    --secondary-color: #e1ecf4;
-    --text-color: #333;
-    --bg-light: #f8f9fa;
-    --white: #ffffff;
-}
+        :root {
+            --primary: #004c97; /* Temple University Blue */
+            --secondary: #002d5a;
+            --accent: #e1ecf4;
+            --kookmin: #f37021; /* Kookmin University Orange (Point) */
+            --text-main: #2d3436;
+            --text-sub: #636e72;
+            --bg-body: #f0f2f5;
+            --white: #ffffff;
+        }
 
-body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
-    background: var(--bg-light);
-}
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            background: var(--bg-body);
+        }
 
-.container {
-    max-width: 850px;
-    margin: 40px auto;
-    background: var(--white);
-    padding: 50px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-}
+        .container {
+            max-width: 900px;
+            margin: 60px auto;
+            background: var(--white);
+            padding: 60px;
+            border-radius: 24px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+        }
 
-header {
-    text-align: center;
-    padding-bottom: 40px;
-    border-bottom: 1.5px solid #eee;
-    margin-bottom: 40px;
-}
+        /* Header Section */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
 
-.profile-img {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid var(--secondary-color);
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
-}
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent);
+            margin-bottom: 25px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-.profile-img:hover {
-    transform: scale(1.05);
-}
+        .profile-img:hover {
+            transform: scale(1.08) rotate(3deg);
+        }
 
-h1 { margin: 10px 0; color: var(--primary-color); font-size: 2.8em; letter-spacing: -1px; }
-.title { font-size: 1.25em; color: #555; font-weight: 600; margin-bottom: 10px; }
-.contact-info { font-size: 0.95em; color: #888; }
+        h1 { margin: 0; font-size: 3rem; color: var(--primary); letter-spacing: -1.5px; }
+        .tagline { font-size: 1.2rem; color: var(--text-sub); font-weight: 500; margin-top: 5px; }
+        
+        .header-info {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            font-size: 0.95rem;
+            color: var(--text-sub);
+        }
 
-h2 {
-    font-size: 1.6em;
-    color: var(--primary-color);
-    margin-top: 45px;
-    margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-}
+        /* Section Styling */
+        h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-top: 50px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-h2::after {
-    content: "";
-    flex: 1;
-    margin-left: 20px;
-    height: 1px;
-    background: #eee;
-}
+        h2::after {
+            content: "";
+            height: 2px;
+            background: var(--accent);
+            flex: 1;
+        }
 
-/* 기술 스택 뱃지 스타일 */
-.skill-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 20px;
-}
+        /* Education Layout */
+        .edu-item {
+            padding: 20px;
+            border-left: 3px solid var(--accent);
+            margin-left: 10px;
+            margin-bottom: 20px;
+            position: relative;
+            background: #fafafa;
+            border-radius: 0 12px 12px 0;
+        }
 
-.skill-badge {
-    background: var(--secondary-color);
-    color: var(--primary-color);
-    padding: 6px 14px;
-    border-radius: 20px;
-    font-size: 0.85em;
-    font-weight: 600;
-}
+        .edu-item.current {
+            border-left-color: var(--primary);
+            background: var(--accent);
+        }
 
-/* 프로젝트 카드 스타일 */
-.project-card {
-    background: #fff;
-    padding: 25px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #eee;
-    transition: all 0.3s ease;
-}
+        .edu-item h3 { margin: 0; font-size: 1.25rem; }
+        .edu-meta { color: var(--text-sub); font-size: 0.9rem; margin-bottom: 8px; }
 
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    border-color: var(--primary-color);
-}
+        /* Skills */
+        .skill-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-.project-card h3 { margin-top: 0; color: #222; font-size: 1.3em; }
+        .skill-badge {
+            background: var(--white);
+            color: var(--primary);
+            border: 1.5px solid var(--primary);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
 
-.links { text-align: center; margin-top: 40px; }
-.links a {
-    display: inline-block;
-    background: var(--primary-color);
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    margin: 0 5px;
-    transition: 0.3s;
-}
+        .skill-badge:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
 
-.links a:hover { background: #003366; opacity: 0.9; }
+        /* Project Cards */
+        .project-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
 
-/* 모바일 대응 */
-@media (max-width: 600px) {
-    .container { padding: 30px 20px; margin: 0; border-radius: 0; }
-    h1 { font-size: 2em; }
-}
+        .project-card {
+            padding: 30px;
+            background: var(--white);
+            border: 1px solid #edf2f7;
+            border-radius: 16px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+        }
+
+        .project-card h3 { margin-top: 0; font-size: 1.2rem; }
+        .project-card p { font-size: 0.95rem; color: var(--text-sub); }
+
+        /* Footer Links */
+        .footer-links {
+            margin-top: 60px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
+        .btn:hover { opacity: 0.9; transform: translateY(-2px); }
+
+        @media (max-width: 768px) {
+            .container { padding: 30px; margin: 20px; }
+            .project-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2.2rem; }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <img src="profile.jpg" alt="Minju Seo" class="profile-img" onerror="this.style.display='none'">
-            <h1>Minju Seo</h1>
-            <p class="title">Autonomous Driving & AI Systems Engineer</p>
-            <div class="contact-info">
-                Email: minju.seo@temple.edu | Philadelphia, PA
-            </div>
-        </header>
 
-        <section>
-            <h2>About Me</h2>
-            <p>I am an Electronic Engineering student and an exchange student at <strong>Temple University</strong>. I specialize in system-level design for autonomous driving and AI, with hands-on experience in simulation and robot system architecture.</p>
-        </section>
-<section>
-    <h2>Technical Skills</h2>
-    <div class="skill-container">
-        <span class="skill-badge">Python</span>
-        <span class="skill-badge">C++</span>
-        <span class="skill-badge">MATLAB</span>
-        <span class="skill-badge">Linux/Shell</span>
-        <span class="skill-badge">PreScan</span>
-    </div>
-</section>
-        <section>
-            <h2>Key Projects</h2>
-            <div class="project-card">
-                <h3>Autonomous Vehicle System Design</h3>
-                <p>Designed and simulated autonomous driving scenarios using PreScan. Focused on optimizing control algorithms for safety and response time.</p>
-            </div>
-            <div class="project-card">
-                <h3>AI Guide Robot Development</h3>
-                <p>Developed an AI-powered navigation robot. Programmed core logic to handle real-time sensor data and path planning for a campus competition.</p>
-            </div>
-        </section>
+<div class="container">
+    <header>
+        <img src="profile.jpg" alt="Minju Seo" class="profile-img" onerror="this.style.display='none'">
+        <h1>Minju Seo</h1>
+        <p class="tagline">Autonomous Driving & AI Systems Engineer</p>
+        <div class="header-info">
+            <span>📍 Philadelphia, PA / Seoul, KR</span>
+            <span>|</span>
+            <span>📧 minju.seo@temple.edu</span>
+        </div>
+    </header>
 
-        <section>
-            <h2>Connect with Me</h2>
-            <div class="links">
-                <a href="https://www.linkedin.com/in/minjuseo/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/Minju-Seo" target="_blank">GitHub</a>
+    <section>
+        <h2>About Me</h2>
+        <p>
+            I am a passionate Electronics Engineering student at <strong>Kookmin University</strong>, currently expanding my expertise in autonomous systems as an exchange student at <strong>Temple University</strong>. I focus on building reliable system-level architectures for self-driving vehicles and AI integration.
+        </p>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <div class="edu-item current">
+            <div class="edu-meta">2024 - Present (Exchange)</div>
+            <h3>Temple University</h3>
+            <p><strong>Department of Engineering & Computer Science</strong><br>Philadelphia, USA</p>
+        </div>
+        <div class="edu-item">
+            <div class="edu-meta">2021 - Present (B.S. Candidate)</div>
+            <h3>Kookmin University</h3>
+            <p><strong>Department of Electronics Engineering</strong><br>Seoul, South Korea</p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Technical Skills</h2>
+        <div class="skill-grid">
+            <span class="skill-badge">Python</span>
+            <span class="skill-badge">C++</span>
+            <span class="skill-badge">MATLAB / Simulink</span>
+            <span class="skill-badge">PreScan</span>
+            <span class="skill-badge">Linux (Ubuntu)</span>
+            <span class="skill-badge">ROS (Robot Operating System)</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>Key Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Autonomous System Design</h3>
+                <p>Designed and simulated ADAS scenarios using PreScan. Optimized control logic for obstacle avoidance and lane keeping.</p>
             </div>
-        </section>
+            <div class="project-card">
+                <h3>AI Campus Guide Robot</h3>
+                <p>Built a navigation robot using path planning algorithms. Integrated sensor fusion to handle dynamic environment data.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-links">
+        <a href="https://www.linkedin.com/in/minjuseo/" class="btn btn-primary" target="_blank">LinkedIn</a>
+        <a href="https://github.com/Minju-Seo" class="btn btn-outline" target="_blank">GitHub</a>
     </div>
+</div>
+
 </body>
 </html>
